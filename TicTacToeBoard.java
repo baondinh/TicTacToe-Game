@@ -1,6 +1,9 @@
-// Bao Dinh
-// Problem Set 6: Question 11
-// CSCI E-10a
+/*
+ * @Author: Bao Dinh 
+ * @Date: 2023-01-07 14:31:46 
+ * @Last Modified by:   Bao Dinh 
+ * @Last Modified time: 2023-01-07 14:31:46 
+ */
 
 /*
 TicTacToeBoard.java used with TicTacToe.java
