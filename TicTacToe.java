@@ -1,8 +1,8 @@
 /*
  * @Author: Bao Dinh 
- * @Date: 2023-01-07 14:35:16 
- * @Last Modified by:   Bao Dinh 
- * @Last Modified time: 2023-01-07 14:35:16 
+ * @Date: 2023-01-10 12:29:34 
+ * @Last Modified by: Bao Dinh
+ * @Last Modified time: 2023-01-10 12:40:24
  */
 
 /*
@@ -11,6 +11,7 @@ Program implements a full tic-tac-toe game between two players with the computer
 Players must input their "move" and if it is valid, the board will update
 If a player gets three X's or three O's in a row, a win message for the player is displayed
 If no player wins before all board spaces are filled, a tie message will be displayed
+Controls rules of the game and display messages
 */
 
 import java.util.Scanner;

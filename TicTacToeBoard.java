@@ -1,14 +1,15 @@
 /*
  * @Author: Bao Dinh 
- * @Date: 2023-01-07 14:31:46 
- * @Last Modified by:   Bao Dinh 
- * @Last Modified time: 2023-01-07 14:31:46 
+ * @Date: 2023-01-10 12:29:45 
+ * @Last Modified by: Bao Dinh
+ * @Last Modified time: 2023-01-10 12:41:10
  */
 
 /*
 TicTacToeBoard.java used with TicTacToe.java
 Implementing TicTacToeBoard class with instance variables, constructors and instance methods 
 TicTacToeBoard class methods do not print anything
+Controls board state
 */
 
 import java.util.Arrays;
@@ -27,6 +28,7 @@ class TicTacToeBoard
     //Constructors
     public TicTacToeBoard (String name1, String name2)
     {
+        Frame frame = new Frame(); //Implementation of GUI
         p1 = name1; 
         p2 = name2; 
     }
