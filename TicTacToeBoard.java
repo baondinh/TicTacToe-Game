@@ -2,7 +2,7 @@
  * @Author: Bao Dinh 
  * @Date: 2023-01-10 12:29:45 
  * @Last Modified by: Bao Dinh
- * @Last Modified time: 2023-01-10 12:41:10
+ * @Last Modified time: 2023-01-10 13:22:18
  */
 
 /*
@@ -23,17 +23,24 @@ class TicTacToeBoard
                                 {' ', ' ', ' '}
     }; 
     private String p1, p2; 
+    private Frame frame = new Frame(); 
 
 
     //Constructors
     public TicTacToeBoard (String name1, String name2)
     {
-        Frame frame = new Frame(); //Implementation of GUI
+        // Frame frame = new Frame(); //Implementation of GUI
+        // JLabel rulesLabel = new JLabel(); //Rules label 
         p1 = name1; 
         p2 = name2; 
     }
 
     //Instance method that converts current state of the game board to a displayable String
+    public void createLabel(String text) 
+    {
+        this.frame.editLabel(text);
+    }
+    
     public String toString()
     {
         String row1 = "";

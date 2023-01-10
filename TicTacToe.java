@@ -2,7 +2,7 @@
  * @Author: Bao Dinh 
  * @Date: 2023-01-10 12:29:34 
  * @Last Modified by: Bao Dinh
- * @Last Modified time: 2023-01-10 12:40:24
+ * @Last Modified time: 2023-01-10 13:30:26
  */
 
 /*
@@ -23,6 +23,13 @@ class TicTacToe
     static void game (String p1, String p2)
     {
         TicTacToeBoard gameBoard = new TicTacToeBoard(p1,p2);
+
+        //GUI rule display 
+        gameBoard.createLabel("<html>Players take turns marking a square. Only squares not already marked can be picked.<br/>"
+                        + "Once a player has marked three squares in a row, that player wins! <br/>"
+                        + "If all squares are marked and no three squares are the same, a tied game is declared.<br/>"
+                        + "Have Fun!</html>");
+
         int gameStatus = gameBoard.isWin();
         int row, column;
         int turn = 0; //P1 goes on 0, P2 goes on 1, keeps track of index for player name
@@ -90,11 +97,11 @@ class TicTacToe
         String p2 = keyboard.nextLine();
 
         //Game Instructions
-        System.out.printf("\nPlayers take turns marking a square. Only squares\n"
-                        + "not already marked can be picked. Once a player has\n"
-                        + "marked three squares in a row, he or she wins! If all squares\n"
-                        + "are marked and no three squares are the same, a tied game is declared.\n"
-                        + "Have Fun!\n");
+        // System.out.printf("\nPlayers take turns marking a square. Only squares\n"
+        //                 + "not already marked can be picked. Once a player has\n"
+        //                 + "marked three squares in a row, he or she wins! If all squares\n"
+        //                 + "are marked and no three squares are the same, a tied game is declared.\n"
+        //                 + "Have Fun!\n");
 
         //Begin Game
         game(p1, p2);
