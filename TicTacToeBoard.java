@@ -6,7 +6,6 @@
  */
 
 /*
-TicTacToeBoard.java used with TicTacToe.java
 Implementing TicTacToeBoard class with instance variables, constructors and instance methods 
 TicTacToeBoard class methods do not print anything
 Controls board state
@@ -23,23 +22,20 @@ class TicTacToeBoard
                                 {' ', ' ', ' '}
     }; 
     private String p1, p2; 
-    private Frame frame = new Frame(); 
 
 
     //Constructors
     public TicTacToeBoard (String name1, String name2)
     {
-        // Frame frame = new Frame(); //Implementation of GUI
-        // JLabel rulesLabel = new JLabel(); //Rules label 
         p1 = name1; 
         p2 = name2; 
     }
 
-    //Instance method that converts current state of the game board to a displayable String
-    public void createLabel(String text) 
-    {
-        this.frame.editLabel(text);
-    }
+    // //Instance method that converts current state of the game board to a displayable String
+    // public void createLabel(String text) 
+    // {
+    //     this.frame.editLabel(text);
+    // }
     
     public String toString()
     {

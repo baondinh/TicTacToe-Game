@@ -6,12 +6,16 @@
  */
 
 /*
-TicTacToe.java used with TicTacToeBoard.java
 Program implements a full tic-tac-toe game between two players with the computer acting as a "referee"
 Players must input their "move" and if it is valid, the board will update
 If a player gets three X's or three O's in a row, a win message for the player is displayed
 If no player wins before all board spaces are filled, a tie message will be displayed
 Controls rules of the game and display messages
+*/
+
+/*
+TicTacToe.java should initialize GUI and computer memory of gameboard state
+TicTacToeBoard.java holds memory of gameboard state while Frame.java changes GUI to update with user input
 */
 
 import java.util.Scanner;
@@ -23,12 +27,6 @@ class TicTacToe
     static void game (String p1, String p2)
     {
         TicTacToeBoard gameBoard = new TicTacToeBoard(p1,p2);
-
-        //GUI rule display 
-        gameBoard.createLabel("<html>Players take turns marking a square. Only squares not already marked can be picked.<br/>"
-                        + "Once a player has marked three squares in a row, that player wins! <br/>"
-                        + "If all squares are marked and no three squares are the same, a tied game is declared.<br/>"
-                        + "Have Fun!</html>");
 
         int gameStatus = gameBoard.isWin();
         int row, column;
@@ -88,6 +86,15 @@ class TicTacToe
 
     public static void main (String [] args)
     {
+        Frame frame = new Frame(); //Initialize GUI frame
+        //GUI rule display 
+        //Game Instructions
+        frame.createLabel("<html>Players take turns marking a square. Only squares not already marked can be picked.<br/>"
+                        + "Once a player has marked three squares in a row, that player wins! <br/>"
+                        + "If all squares are marked and no three squares are the same, a tied game is declared.<br/>"
+                        + "Have Fun!</html>");
+
+
         //Welcome message and input for player names
         System.out.println("Welcome! Tic-Tac-Toe is a two player game.");
         // Scanner keyboard = new Scanner(System.in);
@@ -95,13 +102,6 @@ class TicTacToe
         String p1 = keyboard.nextLine();
         System.out.print("Enter player two's name: ");
         String p2 = keyboard.nextLine();
-
-        //Game Instructions
-        // System.out.printf("\nPlayers take turns marking a square. Only squares\n"
-        //                 + "not already marked can be picked. Once a player has\n"
-        //                 + "marked three squares in a row, he or she wins! If all squares\n"
-        //                 + "are marked and no three squares are the same, a tied game is declared.\n"
-        //                 + "Have Fun!\n");
 
         //Begin Game
         game(p1, p2);
