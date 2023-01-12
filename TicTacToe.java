@@ -84,16 +84,22 @@ class TicTacToe
         }
     }
 
-    public static void main (String [] args)
+    static void createGUI()
     {
         Frame frame = new Frame(); //Initialize GUI frame
         //GUI rule display 
         //Game Instructions
-        frame.createLabel("<html>Players take turns marking a square. Only squares not already marked can be picked.<br/>"
+        frame.rulesLabel("<html>Players take turns marking a square. Only squares not already marked can be picked.<br/>"
                         + "Once a player has marked three squares in a row, that player wins! <br/>"
                         + "If all squares are marked and no three squares are the same, a tied game is declared.<br/>"
                         + "Have Fun!</html>");
 
+        frame.buttonGrid(); 
+    }
+
+    public static void main (String [] args)
+    {
+        createGUI(); 
 
         //Welcome message and input for player names
         System.out.println("Welcome! Tic-Tac-Toe is a two player game.");
