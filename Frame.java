@@ -2,20 +2,15 @@
  * @Author: Bao Dinh 
  * @Date: 2023-01-14 12:53:26 
  * @Last Modified by: Bao Dinh
- * @Last Modified time: 2023-01-16 17:05:31
+ * @Last Modified time: 2023-01-16 17:24:24
  */
 
 import javax.swing.*;
-import java.awt.*; 
-import java.awt.event.*; 
 
-class Frame extends JFrame implements ActionListener
+class Frame extends JFrame
 {
     final private int SIZE = 700; 
     final private int MARGIN = 50; 
-
-    // JButton button1, button2, button3, button4, button5, 
-    //         button6, button7, button8, button9; 
 
     TicTacToeButton button1, button2, button3, button4, button5, 
     button6, button7, button8, button9; 
@@ -66,9 +61,7 @@ class Frame extends JFrame implements ActionListener
         button6.setBounds(MARGIN + buttonSize * 2, MARGIN * 2 + buttonSize, buttonSize, buttonSize);
         button7.setBounds(MARGIN , MARGIN * 2 + buttonSize * 2, buttonSize, buttonSize);
         button8.setBounds(MARGIN + buttonSize, MARGIN * 2 + buttonSize * 2, buttonSize, buttonSize);
-        button9.setBounds(MARGIN + buttonSize * 2, MARGIN * 2 + buttonSize * 2, buttonSize, buttonSize);
-
-        setAction(); 
+        button9.setBounds(MARGIN + buttonSize * 2, MARGIN * 2 + buttonSize * 2, buttonSize, buttonSize); 
         
         //Add buttons
         this.add(button1);
@@ -80,59 +73,5 @@ class Frame extends JFrame implements ActionListener
         this.add(button7);
         this.add(button8);
         this.add(button9); 
-    }
-
-    private void setAction()
-    {
-        button1.addActionListener(this); 
-        button2.addActionListener(this); 
-        button3.addActionListener(this); 
-        button4.addActionListener(this); 
-        button5.addActionListener(this); 
-        button6.addActionListener(this); 
-        button7.addActionListener(this); 
-        button8.addActionListener(this); 
-        button9.addActionListener(this);
-    }
-
-    public void actionPerformed(ActionEvent e)
-    {
-        System.out.println("Button was clicked."); 
-        if (e.getSource() == button1)
-        {
-            button1.changeButton(); 
-        }
-        else if (e.getSource() == button2)
-        {
-            button2.changeButton(); 
-        }
-        else if (e.getSource() == button3)
-        {
-            button3.changeButton(); 
-        }
-        else if (e.getSource() == button4)
-        {
-            button4.changeButton(); 
-        }
-        else if (e.getSource() == button5)
-        {
-            button5.changeButton(); 
-        }
-        else if (e.getSource() == button6)
-        {
-            button6.changeButton(); 
-        }
-        else if (e.getSource() == button7)
-        {
-            button7.changeButton(); 
-        }
-        else if (e.getSource() == button8)
-        {
-            button8.changeButton(); 
-        }
-        else if (e.getSource() == button9)
-        {
-            button9.changeButton(); 
-        }
     }
 }
