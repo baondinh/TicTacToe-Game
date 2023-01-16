@@ -1,8 +1,8 @@
 /*
  * @Author: Bao Dinh 
- * @Date: 2023-01-14 12:53:12 
- * @Last Modified by:   Bao Dinh 
- * @Last Modified time: 2023-01-14 12:53:12 
+ * @Date: 2023-01-16 13:31:11 
+ * @Last Modified by: Bao Dinh
+ * @Last Modified time: 2023-01-16 17:13:55
  */
 
 /*
@@ -20,12 +20,11 @@ TicTacToeBoard.java holds memory of gameboard state while Frame.java changes GUI
 
 import java.util.Scanner;
 
-class TicTacToe
-{
+class TicTacToe {
+
     static final Scanner keyboard = new Scanner(System.in);
 
-    static void game (String p1, String p2)
-    {
+    static void game (String p1, String p2) {
         TicTacToeBoard gameBoard = new TicTacToeBoard(p1,p2);
 
         int gameStatus = gameBoard.isWin();
@@ -33,10 +32,8 @@ class TicTacToe
         int turn = 0; //P1 goes on 0, P2 goes on 1, keeps track of index for player name
         String [] playerTurn = {p1, p2};
 
-        //Show initial state of game board
-        System.out.println(gameBoard.toString());
-        //Player 1 initial turn
-        System.out.println("It is " + playerTurn[turn] + "'s turn.");
+        System.out.println(gameBoard.toString()); //Show initial state of game board
+        System.out.println("It is " + playerTurn[turn] + "'s turn."); //Player 1 initial turn
 
         //Loop to continuously run the game until a winner is found or game ends in a draw
         do
@@ -66,18 +63,14 @@ class TicTacToe
         } while(gameStatus == 0);
 
         //Who wins?
-        if (gameStatus !=0)
-        {
-            if (gameStatus == 1) //P1 wins
-            {
+        if (gameStatus !=0) {
+            if (gameStatus == 1) { //P1 wins
                 System.out.println("Game Over - " + playerTurn[turn] + " WINS!!!");
             }
-            else if (gameStatus == 2) //P2 wins
-            {
+            else if (gameStatus == 2) { //P2 wins
                 System.out.println("Game Over - " + playerTurn[turn] + " WINS!!!");
             }
-            else if (gameStatus == -1) //Draw
-            {
+            else if (gameStatus == -1) { //Draw
                 System.out.println("Game Over - It's a TIE!!!");
             }
             else System.out.println("Error");
@@ -95,22 +88,24 @@ class TicTacToe
                         + "Have Fun!</html>");
 
         frame.buttonGrid(); 
+        frame.setVisible(true); 
     }
 
     public static void main (String [] args)
     {
         createGUI(); 
 
-        //Welcome message and input for player names
-        System.out.println("Welcome! Tic-Tac-Toe is a two player game.");
-        // Scanner keyboard = new Scanner(System.in);
-        System.out.print("Enter player one's name: ");
-        String p1 = keyboard.nextLine();
-        System.out.print("Enter player two's name: ");
-        String p2 = keyboard.nextLine();
+        // //Welcome message and input for player names
+        // System.out.println("Welcome! Tic-Tac-Toe is a two player game.");
+        // // Scanner keyboard = new Scanner(System.in);
+        // System.out.print("Enter player one's name: ");
+        // String p1 = keyboard.nextLine();
+        // System.out.print("Enter player two's name: ");
+        // String p2 = keyboard.nextLine();
 
-        //Begin Game
-        game(p1, p2);
-        keyboard.close();
+        // //Begin Game
+        // game(p1, p2);
+        game("Test1", "Test2");
+        // keyboard.close();
     }
 }

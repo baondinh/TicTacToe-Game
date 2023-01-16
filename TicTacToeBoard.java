@@ -1,8 +1,8 @@
 /*
  * @Author: Bao Dinh 
- * @Date: 2023-01-14 12:53:18 
- * @Last Modified by:   Bao Dinh 
- * @Last Modified time: 2023-01-14 12:53:18 
+ * @Date: 2023-01-16 16:35:22 
+ * @Last Modified by: Bao Dinh
+ * @Last Modified time: 2023-01-16 16:36:04
  */
 
 /*
@@ -10,8 +10,6 @@ Implementing TicTacToeBoard class with instance variables, constructors and inst
 TicTacToeBoard class methods do not print anything
 Controls board state
 */
-
-import java.util.Arrays;
 
 class TicTacToeBoard
 {
@@ -23,19 +21,12 @@ class TicTacToeBoard
     }; 
     private String p1, p2; 
 
-
     //Constructors
     public TicTacToeBoard (String name1, String name2)
     {
         p1 = name1; 
         p2 = name2; 
     }
-
-    // //Instance method that converts current state of the game board to a displayable String
-    // public void createLabel(String text) 
-    // {
-    //     this.frame.editLabel(text);
-    // }
     
     public String toString()
     {
