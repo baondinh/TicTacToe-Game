@@ -1,8 +1,8 @@
 /*
  * @Author: Bao Dinh 
  * @Date: 2023-01-17 13:50:43 
- * @Last Modified by:   Bao Dinh 
- * @Last Modified time: 2023-01-17 13:50:43 
+ * @Last Modified by: Bao Dinh
+ * @Last Modified time: 2023-01-17 14:42:22
  */
 
 /*
@@ -12,17 +12,13 @@ Merge TicTacToBoard.java with Frame.java
 import javax.swing.*; 
 import java.awt.event.*;
 
-class TicTacToeFrame extends JFrame implements ActionListener{
+class TicTacToeFrame extends JFrame {
     
     final private int SIZE = 700; 
     final private int MARGIN = 50; 
 
     TicTacToeButton button1, button2, button3, button4, button5, 
     button6, button7, button8, button9; 
-
-    TicTacToeButton [][] GRID = {   {button1, button2, button3},
-                                    {button4, button5, button6},
-                                    {button7, button8, button9} };
             
     private int player = 1; //Starts with player 1 
     private int gameStatus = 0; //0 active game, 1 p1 win, 2 p2 win, -1 tie
@@ -87,15 +83,33 @@ class TicTacToeFrame extends JFrame implements ActionListener{
 
     //ActionListener buttons
     public void setAction() {
-        button1.addActionListener(this);
-        button2.addActionListener(this);
-        button3.addActionListener(this);
-        button4.addActionListener(this);
-        button5.addActionListener(this);
-        button6.addActionListener(this);
-        button7.addActionListener(this);
-        button8.addActionListener(this);
-        button9.addActionListener(this);
+        button1.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {    selectionButtonPressed(button1);    }   });
+        button2.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {    selectionButtonPressed(button2);    }   });
+        button3.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {    selectionButtonPressed(button3);    }   });
+        button4.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {    selectionButtonPressed(button4);    }   });
+        button5.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {    selectionButtonPressed(button5);    }   });
+        button6.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {    selectionButtonPressed(button6);    }   });
+        button7.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {    selectionButtonPressed(button7);    }   });
+        button8.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {    selectionButtonPressed(button8);    }   });
+        button9.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {    selectionButtonPressed(button9);    }   });
+    }
+
+    public void selectionButtonPressed(TicTacToeButton b) {
+        if (b.legalMove() == true) {
+            b.setPlayer(player); 
+            b.changeButton();
+            checkGame(); 
+        }
+        else System.out.println("Error: ILLEGAL CHOICE! TRY AGAIN..."); 
     }
 
     public void disableButtons() {
@@ -163,82 +177,6 @@ class TicTacToeFrame extends JFrame implements ActionListener{
                 System.out.println("Game Over - It's a TIE!!!");
             }
             else System.out.println("Error");
-        }
-    }
-
-    //Button behavior
-    public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == button1) {
-            if (button1.legalMove() == true) {
-                button1.setPlayer(player);
-                button1.changeButton(); 
-                checkGame(); 
-            }
-            else System.out.println("Error: ILLEGAL CHOICE! TRY AGAIN...");
-        }
-        else if (e.getSource() == button2) {
-            if (button2.legalMove() == true) {
-                button2.setPlayer(player);
-                button2.changeButton(); 
-                checkGame();
-            }
-            else System.out.println("Error: ILLEGAL CHOICE! TRY AGAIN...");
-        }
-        else if (e.getSource() == button3) {
-            if (button3.legalMove() == true) {
-                button3.setPlayer(player);
-                button3.changeButton(); 
-                checkGame();
-            }
-            else System.out.println("Error: ILLEGAL CHOICE! TRY AGAIN...");
-        }
-        else if (e.getSource() == button4) {
-            if (button4.legalMove() == true) {
-                button4.setPlayer(player);
-                button4.changeButton(); 
-                checkGame();
-            }
-            else System.out.println("Error: ILLEGAL CHOICE! TRY AGAIN...");
-        }
-        else if (e.getSource() == button5) {
-            if (button5.legalMove() == true) {
-                button5.setPlayer(player);
-                button5.changeButton(); 
-                checkGame();
-            }
-            else System.out.println("Error: ILLEGAL CHOICE! TRY AGAIN...");
-        }
-        else if (e.getSource() == button6) {
-            if (button6.legalMove() == true) {
-                button6.setPlayer(player);
-                button6.changeButton(); 
-                checkGame();
-            }
-            else System.out.println("Error: ILLEGAL CHOICE! TRY AGAIN...");
-        }
-        else if (e.getSource() == button7) {
-            if (button7.legalMove() == true) {
-                button7.setPlayer(player);
-                button7.changeButton(); 
-                checkGame();
-            }
-            else System.out.println("Error: ILLEGAL CHOICE! TRY AGAIN...");
-        }
-        else if (e.getSource() == button8) {
-            if (button8.legalMove() == true) {
-                button8.setPlayer(player); 
-                button8.changeButton(); 
-                checkGame();
-            }
-            else System.out.println("Error: ILLEGAL CHOICE! TRY AGAIN...");
-        }
-        else if (e.getSource() == button9) {
-            if (button9.legalMove() == true) {
-                button9.setPlayer(player); 
-                button9.changeButton();
-                checkGame(); 
-            }
-            else System.out.println("Error: ILLEGAL CHOICE! TRY AGAIN..."); 
         }
     }
 }
