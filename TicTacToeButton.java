@@ -1,63 +1,58 @@
 /*
  * @Author: Bao Dinh 
- * @Date: 2023-01-16 13:24:52 
- * @Last Modified by: Bao Dinh
- * @Last Modified time: 2023-01-16 17:33:28
+ * @Date: 2023-01-17 13:53:46 
+ * @Last Modified by:   Bao Dinh 
+ * @Last Modified time: 2023-01-17 13:53:46 
  */
 
 import javax.swing.JButton;
 import java.awt.Color;
 import java.awt.Font; 
-import java.awt.event.*; 
 
-class TicTacToeButton extends JButton implements ActionListener
+class TicTacToeButton extends JButton
 {
-    private String name; 
-    private String player; 
+    private String name; //Way to differentiate between buttons 
+    private int player; 
     
     //Constructor
     TicTacToeButton(String text)
     {
-        name = text; 
-        player = "p2"; 
-        this.setText(name); 
-        this.addActionListener(this);  
+        name = text;  
+        this.setText(name);  
+    }
+
+    //Getter and Setter methods
+    public String getName() {
+        return name; 
+    }
+
+    public void setPlayer(int n) {   
+        player = n; 
     }
 
     //Instance methods
-    public void setPlayer() {   
-        
-    }
-
     public void changeButton()
     {
-        if (name != "X" && name != "O") {
-            if (player == "p1") {
-                name = "X"; 
-                this.setText(name); 
-                this.setFont(new Font("Times New Roman", Font.BOLD, 75)); 
-                // this.setEnabled(false);         
-                // this.setText("<html><font color = red>X</font></html>");    
-                this.setForeground(Color.red); 
-                this.setBackground(Color.lightGray); 
-            }
-            else if (player == "p2") {
-                name = "O"; 
-                this.setText(name); 
-                this.setFont(new Font("Times New Roman", Font.BOLD, 75)); 
-                // this.setEnabled(false);         
-                // this.setText("<html><font color = red>X</font></html>");    
-                this.setForeground(Color.blue); 
-                this.setBackground(Color.lightGray); 
-            }
+        if (player == 1) {
+            name = "X"; 
+            this.setText(name); 
+            this.setFont(new Font("Times New Roman", Font.BOLD, 75));    
+            this.setForeground(Color.red); 
+            this.setBackground(Color.lightGray); 
+        }
+        else if (player == 2) {
+            name = "O"; 
+            this.setText(name); 
+            this.setFont(new Font("Times New Roman", Font.BOLD, 75));    
+            this.setForeground(Color.blue); 
+            this.setBackground(Color.lightGray); 
         }
     }
 
-    public void actionPerformed(ActionEvent e)
-    {
-        if (e.getSource() == this)
-        {
-            changeButton(); 
-        }
+    public boolean legalMove() {
+        if (name == "X" || name == "O") {
+            return false;
+        } 
+        else return true;
     }
 }
